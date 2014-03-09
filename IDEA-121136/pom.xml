@@ -1,0 +1,134 @@
+<!--
+Testing http://youtrack.jetbrains.com/issue/IDEA-121136
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.eoti.test</groupId>
+    <artifactId>idea121136</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>IDEA-121136</name>
+    <description>Testing IDEA-121136</description>
+    <url>http://youtrack.jetbrains.com/issue/IDEA-121136</url>
+
+    <properties>
+        <maven.min-version>3.1.1</maven.min-version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <android.sdk.path>${env.ANDROID_HOME}</android.sdk.path>
+        <android.dependency.version>4.4_r1</android.dependency.version>
+        <android.maven.version>3.9.0-rc.1</android.maven.version>
+        <android.api>19</android.api>
+    </properties>
+
+    <modules>
+        <module>api</module>
+        <module>app</module>
+    </modules>
+
+    <repositories>
+        <repository>
+            <id>playhaven-public</id>
+            <name>PlayHaven Public Repository</name>
+            <url>http://nexus.playhaven.com/nexus/content/groups/public/</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+                <checksumPolicy>warn</checksumPolicy>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+    </repositories>
+
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>playhaven-public</id>
+            <name>PlayHaven Public Repository</name>
+            <url>http://nexus.playhaven.com/nexus/content/groups/public/</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+                <checksumPolicy>warn</checksumPolicy>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>android</groupId>
+                <artifactId>android</artifactId>
+                <version>${android.dependency.version}</version>
+                <scope>provided</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.1</version>
+                    <configuration>
+                        <source>1.7</source>
+                        <target>1.7</target>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>com.jayway.maven.plugins.android.generation2</groupId>
+                    <artifactId>android-maven-plugin</artifactId>
+                    <version>${android.maven.version}</version>
+                    <configuration>
+                        <extractDuplicates>true</extractDuplicates>
+						<sourceManifestFile>${project.basedir}/src/main/android/AndroidManifest.xml</sourceManifestFile>
+						<androidManifestFile>${project.build.directory}/AndroidManifest.xml</androidManifestFile>                        
+                        <assetsDirectory>${project.basedir}/src/main/android/assets</assetsDirectory>
+                        <resourceDirectory>${project.basedir}/src/main/android/res</resourceDirectory>
+                        <nativeLibrariesDirectory>${project.basedir}/src/main/android/native</nativeLibrariesDirectory>
+                        <sdk>
+                            <platform>${android.api}</platform>
+                        </sdk>
+                        <undeployBeforeDeploy>true</undeployBeforeDeploy>
+                        <mergeManifests>true</mergeManifests>
+                        <proguard>
+                            <skip>true</skip>
+                        </proguard>
+                    </configuration>
+                    <extensions>true</extensions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <version>1.2</version>
+                <executions>
+                    <execution>
+                        <id>enforce-default</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <requireMavenVersion>
+                                    <version>[${maven.min-version},)</version>
+                                </requireMavenVersion>
+                                <requireJavaVersion>
+                                    <version>[1.7,)</version>
+                                </requireJavaVersion>
+                            </rules>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

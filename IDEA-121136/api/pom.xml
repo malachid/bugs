@@ -1,0 +1,44 @@
+<!--
+Testing http://youtrack.jetbrains.com/issue/IDEA-121136
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+		<groupId>org.eoti.test</groupId>
+		<artifactId>idea121136</artifactId>
+		<version>1.0-SNAPSHOT</version>
+    </parent>
+    <groupId>org.eoti.test.idea121136</groupId>
+    <artifactId>api</artifactId>
+    <packaging>aar</packaging>
+    <name>API</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>android</groupId>
+            <artifactId>android</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.jayway.maven.plugins.android.generation2</groupId>
+                <artifactId>android-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>aar</id>
+                        <phase>package</phase>
+                        <goals><goal>aar</goal></goals>
+                        <configuration>
+                            <generateApk>false</generateApk>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

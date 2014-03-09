@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="AAR View"
+            android:id="@+id/textView" android:layout_alignParentTop="true" android:layout_centerHorizontal="true"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="The following application is requesting access:"
+            android:id="@+id/textView2" android:layout_below="@+id/textView" android:layout_alignParentLeft="true"
+            android:layout_marginLeft="23dp" android:layout_marginTop="33dp"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TBD"
+            android:id="@+id/txtRequest" android:layout_below="@+id/textView2"
+            android:layout_alignLeft="@+id/textView2"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Grant"
+            android:id="@+id/btnGrant" android:layout_below="@+id/txtRequest" android:layout_toLeftOf="@+id/textView"
+            android:layout_marginTop="83dp" android:onClick="onGrant"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Deny"
+            android:id="@+id/btnDeny" android:layout_alignTop="@+id/btnGrant"
+            android:layout_alignRight="@+id/textView2" android:onClick="onDeny"/>
+</RelativeLayout>
