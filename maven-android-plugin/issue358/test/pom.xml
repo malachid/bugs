@@ -30,7 +30,7 @@
         </profile>
         <profile>
             <!-- Class resolved by unexpected DEX -->
-            <id>APKRUNTIME</id>
+            <id>APKCOMPILE</id>
             <activation><activeByDefault>false</activeByDefault></activation>
             <dependencies>
                 <dependency>

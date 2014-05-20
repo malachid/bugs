@@ -14,6 +14,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <android.sdk.path>${env.ANDROID_HOME}</android.sdk.path>
         <android.dependency.version>4.4.2_r3</android.dependency.version>
+        <!--<android.maven.version>3.9.0-rc.1</android.maven.version>-->
         <android.maven.version>3.9.0-SNAPSHOT</android.maven.version>
         <android.play.version>4.3.23</android.play.version>
         <android.api>19</android.api>
