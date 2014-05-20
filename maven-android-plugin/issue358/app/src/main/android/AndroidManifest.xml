@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<manifest android:installLocation="auto" android:versionName="1.0-SNAPSHOT" package="org.eoti.bugs.mavenandroidplugin.issue358.app"
+          xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1">
+
+    <uses-sdk android:minSdkVersion="10" android:targetSdkVersion="19"/>
+
+    <supports-screens android:smallScreens="true"
+                      android:normalScreens="true"
+                      android:largeScreens="true"
+                      android:anyDensity="true"/>
+
+    <application android:icon="@drawable/icon" android:label="Issue358" android:debuggable="true">
+        <activity android:name=".Issue358" android:configChanges="orientation|keyboardHidden|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

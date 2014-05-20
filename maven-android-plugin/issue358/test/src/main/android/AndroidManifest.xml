@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<manifest android:installLocation="auto" android:versionName="1.0-SNAPSHOT" package="org.eoti.bugs.mavenandroidplugin.issue358.test"
+          xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1">
+
+    <uses-sdk android:minSdkVersion="10" android:targetSdkVersion="19"/>
+
+    <application android:debuggable="true">
+        <uses-library android:name="android.test.runner" />
+    </application>
+
+    <instrumentation android:name="android.test.InstrumentationTestRunner"
+                     android:targetPackage="org.eoti.bugs.mavenandroidplugin.issue358.app" android:label="App" />
+</manifest>
