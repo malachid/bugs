@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:issue358="http://schemas.android.com/apk/res-auto"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -16,10 +17,11 @@
             android:text="ID:"
             android:id="@+id/textView2" android:layout_below="@+id/title"
             android:layout_marginTop="43dp"/>
-    <TextView
+    <org.eoti.bugs.mavenandroidplugin.issue358.api.IdField
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="unknown"
+            issue358:idBackgroundColor="#fff8dc"
             android:id="@+id/advertId" android:layout_alignTop="@+id/textView2"
             android:layout_toRightOf="@+id/textView2" android:layout_marginLeft="23dp"/>
 </RelativeLayout>

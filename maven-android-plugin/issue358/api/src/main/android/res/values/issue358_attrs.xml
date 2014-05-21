@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <declare-styleable name="org_eoti_bugs_mavenandroidplugin_issue358_api_IdField">
+        <!-- Numeric text color -->
+        <attr name="idBackgroundColor" format="color"/>
+    </declare-styleable>
+</resources>
