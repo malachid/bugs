@@ -17,7 +17,7 @@
         <profile>
             <!-- package org.eoti.bugs.mavenandroidplugin.issue358.app does not exist -->
             <id>APKPROVIDED</id>
-            <activation><activeByDefault>false</activeByDefault></activation>
+            <activation><activeByDefault>true</activeByDefault></activation>
             <dependencies>
                 <dependency>
                     <groupId>${project.groupId}</groupId>
